@@ -1,0 +1,125 @@
+:root {
+  --translate: 40px;
+  --translate-minus: -40px;
+  --rotate-0: 0deg;
+  --rotate-50: 45deg;
+  --rotate-100: 90deg;
+  --anim-dur: 3s;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.anim-block {
+  width: 50px;
+  height: 50px;
+
+  animation-name: block-anim;
+  animation-duration: var(--anim-dur);
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+
+.rect {
+  width: 50px;
+  height: 50px;
+  border-width: 3px;
+  border-style: solid;
+  position: fixed;
+
+  animation-duration: var(--anim-dur);
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+
+.rect-blue {
+  border-color: deepskyblue;
+  animation-name: blue-anim;
+}
+
+.rect-orange {
+  border-color: orange;
+  animation-name: orange-anim;
+}
+
+.rect-purp {
+  border-color: darkviolet;
+  animation-name: purple-anim;
+}
+
+.rect-pink {
+  border-color: hotpink;
+  animation-name: pink-anim;
+}
+
+@keyframes blue-anim {
+  0% {
+    transform: translate(0px, 0px) rotate(var(--rotate-0));
+  }
+  50% {
+    transform: translate(var(--translate), var(--translate-minus)) rotate(var(--rotate-50));
+    border-color: deepskyblue;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(var(--rotate-100));
+    border-color: midnightblue;
+  }
+}
+
+@keyframes pink-anim {
+  0% {
+    transform: translate(0px, 0px) rotate(var(--rotate-0));
+  }
+  50% {
+    transform: translate(var(--translate), var(--translate)) rotate(var(--rotate-50));
+    border-color: hotpink;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(var(--rotate-100));
+    border-color: darkmagenta;
+  }
+}
+
+@keyframes orange-anim {
+  0% {
+    transform: translate(0px, 0px) rotate(var(--rotate-0));
+  }
+  50% {
+    transform: translate(var(--translate-minus), var(--translate)) rotate(var(--rotate-50));
+    border-color: orange;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(var(--rotate-100));
+    border-color: darkred;
+  }
+}
+
+@keyframes purple-anim {
+  0% {
+    transform: translate(0px, 0px) rotate(var(--rotate-0));
+  }
+  50% {
+    transform: translate(var(--translate-minus), var(--translate-minus)) rotate(var(--rotate-50));
+    border-color: darkviolet;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(var(--rotate-100));
+    border-color: rebeccapurple;
+
+  }
+}
+
+@keyframes block-anim {
+  0% {
+    transform: rotate(var(--rotate-0));
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
